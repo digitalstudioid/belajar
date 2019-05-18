@@ -130,19 +130,21 @@ class SiswaController extends Controller
 
 	}
 
-	public function show($id) {
+	//public function show($id) {
+	public function show(Siswa $siswa) {
 		//$halaman	= 'siswa';  //digantikan dg source di template
-		$siswa 		= Siswa::findOrFail($id);
+		//$siswa 		= Siswa::findOrFail($id);
 		//return view('siswa.show', compact('halaman', 'siswa'));
 		return view('siswa.show', compact('siswa'));
 	}
 
-	public function edit($id) {
+	//public function edit($id) {
+	public function edit(Siswa $siswa) {
 		/*Penyimpanan tanpa relasi
 		$siswa = Siswa::findOrFail($id);
 		return view('siswa.edit', compact('siswa'));*/
 
-		$siswa = Siswa::findOrFail($id);
+		//$siswa = Siswa::findOrFail($id);
 		$siswa->nomor_telepon = $siswa->telepon->nomor_telepon;
 		/*Karena kita menggunakan visual composer maka tidak menggunakan syntax ini
 		$list_kelas = Kelas::pluck('nama_kelas', 'id');
@@ -153,13 +155,14 @@ class SiswaController extends Controller
 
 	//public function update($id, Request $request) {
 	//Kita menggunakan validation form
-	public function update($id, SiswaRequest $request) {
+	//public function update($id, SiswaRequest $request) {
+	public function update(Siswa $siswa, SiswaRequest $request) {
 		/*Menyimpan tanpa validasi
 		$siswa = Siswa::findOrFail($id);
 		$siswa->update($request->all());
 		return redirect('siswa');*/
 
-		$siswa 	= Siswa::findOrFail($id);
+		//$siswa 	= Siswa::findOrFail($id);
 		$input 	= $request->all();
 
 		//Validasi Manual
@@ -198,8 +201,9 @@ class SiswaController extends Controller
 		return redirect('siswa');
 	}
 
-	public function destroy($id) {
-		$siswa = Siswa::findOrFail($id);
+	//public function destroy($id) {
+	public function destroy(Siswa $siswa) {
+		//$siswa = Siswa::findOrFail($id);
 		$siswa->delete();
 		return redirect('siswa');
 	}
