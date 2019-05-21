@@ -118,7 +118,7 @@ class SiswaController extends Controller
 
 		if ($request->hasFile('foto')) {
 			$foto	= $request->file('foto');
-			$ext 	= $foto->getClientOriginalExtention();
+			$ext 	= $foto->getClientOriginalExtension();
 
 			if ($request->file('foto')->isValid()) {
 				$foto_name		= date('YmdHis'). ".$ext";
