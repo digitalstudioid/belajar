@@ -20,6 +20,7 @@ class CreateSiswaTable extends Migration
             $table->date('tanggal_lahir');
             $table->enum('jenis_kelamin', ['L', 'P']);
             $table->bigInteger('id_kelas')->unsigned();
+            $table->string('foto')->nullable();
             $table->timestamps();
         });
     }

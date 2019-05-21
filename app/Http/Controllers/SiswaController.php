@@ -10,6 +10,7 @@ use App\Hobi;
 use Carbon\Carbon;
 //use Validator; Validasi Manual
 use App\Http\Requests\SiswaRequest;
+use storage;
 
 class SiswaController extends Controller
 {
@@ -114,6 +115,18 @@ class SiswaController extends Controller
 		/*Penyimpanan tanpa relasi
 		Siswa::create($input);
 		return redirect('siswa');*/
+
+		if ($request->hasFile('foto')) {
+			$foto	= $request->file('foto');
+			$ext 	= $foto->getClientOriginalExtention();
+
+			if ($request->file('foto')->isValid()) {
+				$foto_name		= date('YmdHis'). ".$ext";
+				$upload_path	= 'fotoupload';
+				$request->file('foto')->move($upload_path, $foto_name);
+				$input['foto']	= $foto_name;
+			}
+		}
 
 		//Simpan Siswa
 		$siswa 	= Siswa::create($input);

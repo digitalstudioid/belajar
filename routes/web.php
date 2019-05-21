@@ -57,6 +57,7 @@ file yang dihasilkan berada di /database/migrations
 Syntax : php artisan make:migration create_users_table --create=users
 
 Untuk eksekusinya : php artisan migrate
+atau php artisan migrate:refresh
 
 Jika ada error path to long harus tambahkan syntax berikut pada file app/Providers/AppServiceProvider.php :
 use Illuminate\Support\Facades\Schema;

@@ -14,6 +14,7 @@ class Siswa extends Model
     	'tanggal_lahir',
     	'jenis_kelamin',
         'id_kelas',
+        'foto',
     ]; //array yang berisi nama-nama kolom yang dapat kita isi secara mass assigment. misal kita punya tabel user yg memiliki field is_admin tidak boleh diisi sembarangan. makanya kita batasi field apa saja yg bisa di input dg cara ini
 
     //protected $guarded = ['status']; //field selain status boleh diisi secara mas assigment

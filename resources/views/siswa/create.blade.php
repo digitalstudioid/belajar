@@ -10,7 +10,7 @@
 		<form action="{{ url('siswa') }}" method="POST">
 		
 		Versi LaravelCollective-->
-		{!! Form::open(['url' => 'siswa']) !!}
+		{!! Form::open(['url' => 'siswa', 'files' => true]) !!}
 
 
 			{{ csrf_field() }}

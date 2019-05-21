@@ -137,6 +137,18 @@
 	@endif
 </div>
 
+@if($errors->any())
+	<div class="form-group {{ $errors->has('foto') ? 'has-error' : 'has-success' }}">
+@else
+	<div class="form-group">
+@endif
+	{!! Form::label('foto', 'Foto :') !!}
+	{!! Form::file('foto') !!}
+	@if ($errors->has('foto'))
+		<span class="help-block">{{ $errors->first('foto') }}</span>
+	@endif
+</div>
+
 <div class="form-group">
 	{!! Form::submit($submitButtonText, ['class' => 'btn btn-primary form-control']) !!}
 </div>
