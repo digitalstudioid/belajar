@@ -10,7 +10,8 @@ use App\Hobi;
 use Carbon\Carbon;
 //use Validator; Validasi Manual
 use App\Http\Requests\SiswaRequest;
-use storage;
+//use storage;
+use Illuminate\Support\Facades\Storage;
 
 class SiswaController extends Controller
 {

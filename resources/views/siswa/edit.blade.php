@@ -6,7 +6,7 @@
 
 		<!--Syntax ini tidak menampilkan data yang ingin diedit
 		{!! Form::open(['url' => 'siswa/' . $siswa->id . '/update', 'method' => 'PATCH']) !!}-->
-		{!! Form::model($siswa, ['method' => 'PATCH', 'action' => ['SiswaController@update', $siswa->id]]) !!}
+		{!! Form::model($siswa, ['method' => 'PATCH', 'files' => true, 'action' => ['SiswaController@update', $siswa->id]]) !!}
 
 			<!--
 			<div class="form-group">
