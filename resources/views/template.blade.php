@@ -35,7 +35,8 @@
 
 	@yield('footer')
 
-	<script src="{{ asset('public/js/jquery_3_3_1.min.js"></script>
-	<script src="{{ asset('public/bootstrap_3_3_6/js/bootstrap.min.js"></script>
+	<script src="{{ asset('public/js/jquery_3_3_1.min.js') }}"></script>
+	<script src="{{ asset('public/bootstrap_3_3_6/js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('js/laravelapp.js') }}"></script>
 </body>
 </html>

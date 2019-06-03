@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use App\Http\Requests\SiswaRequest;
 //use storage;
 use Illuminate\Support\Facades\Storage;
+use Session;
 
 class SiswaController extends Controller
 {
@@ -170,7 +171,7 @@ class SiswaController extends Controller
 
 		//Simpan Hobi
 		$siswa->hobi()->attach($request->input('hobi_siswa'));
-
+		Session::flash('flash_message', 'Data siswa berhasil disimpan.');
 		return redirect('siswa');
 
 	}

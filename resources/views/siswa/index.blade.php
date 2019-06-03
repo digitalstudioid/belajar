@@ -4,6 +4,8 @@
 	<div id="siswa">
 		<h2>Siswa</h2>
 		
+		@include('_partial.flash_message')
+		
 		<!-- PHP NATIVE VERSION
 		<?php if (!empty($siswa)):?>
 			<u1>
