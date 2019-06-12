@@ -280,6 +280,10 @@ class SiswaController extends Controller
 		//$siswa = Siswa::findOrFail($id);
 		$this->hapusFoto($siswa);
 		$siswa->delete();
+
+		Session::flash('flash_message', 'Data siswa berhasil dihapus.');
+		Session::flash('penting', true);
+
 		return redirect('siswa');
 	}
 
