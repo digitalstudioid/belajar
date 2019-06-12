@@ -287,6 +287,15 @@ class SiswaController extends Controller
 		return redirect('siswa');
 	}
 
+	public function cari(Request $request) {
+		$kata_kunci		= $request->input('kata_kunci');
+		$query			= Siswa::where('nama', 'LIKE', '%' . $kata_kunci . '%');
+		$siswa_list 	= $query->paginate(2);
+		$pagination		= $siswa_list->appends($request->except('page'));
+		$jumlah_siswa	= $siswa_list->total();
+		return view('siswa.index', compact('siswa_list', 'kata_kunci', 'pagination', 'jumlah_siswa'));
+	}
+
 	public function tesCollection() {
 		$orang 		= ['rudi amirudin', 'ajeng dwie rahayu lestari', 'muhammad adli shidqi', 'muhammad nasser alfillah haq'];
 		$koleksi	= collect($orang)->map(function($nama) {

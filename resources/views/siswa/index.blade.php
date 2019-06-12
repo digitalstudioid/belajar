@@ -5,6 +5,8 @@
 		<h2>Siswa</h2>
 		
 		@include('_partial.flash_message')
+		@include('siswa.form_pencarian')
+		<br>
 		
 		<!-- PHP NATIVE VERSION
 		<?php if (!empty($siswa)):?>
@@ -29,7 +31,7 @@
 		@endif  -->
 
 		<div class="top-nav">
-			<div>
+			<div>				
 				<a href="siswa/create" class="btn btn-primary">Tambah Siswa</a>
 			</div>			
 		</div>

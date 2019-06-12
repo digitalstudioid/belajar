@@ -264,6 +264,7 @@ Route::group(['middleware' => ['web']], function() {
 	//Route::patch('siswa/{siswa}', 'SiswaController@update');
 	//Route::delete('siswa/{siswa}', 'SiswaController@destroy');
 
+	Route::get('siswa/cari', 'SiswaController@cari');
 	Route::resource('siswa', 'SiswaController');
 });
 
