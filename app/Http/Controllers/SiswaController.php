@@ -270,6 +270,8 @@ class SiswaController extends Controller
 		//Update Hobi
 		$siswa->hobi()->sync($request->input('hobi_siswa'));
 
+		Session::flash('flash_message', 'Data siswa berhasil diupdate.');
+
 		return redirect('siswa');
 	}
 
