@@ -28,6 +28,10 @@ class FormSiswaServiceProvider extends ServiceProvider
         view()->composer('siswa.form', function($view) {
             $view->with('list_kelas', Kelas::pluck('nama_kelas', 'id'));
             $view->with('list_hobi', Hobi::pluck('nama_hobi', 'id'));
+
+            view()->composer('siswa.form_pencarian', function($view) {
+                $view->with('list_kelas', Kelas::pluck('nama_kelas', 'id'));
+            });
         });
     }
 }
